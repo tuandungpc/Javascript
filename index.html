@@ -7,20 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+    <ul>
+        <li><a href="#" class="show">Tin công nghệ</a></li>
+        <li><a href="#">Tin trong nước</a></li>
+        <li><a href="#" class="show">Tin thời sự</a></li>
+    </ul>  
     <script>
-        var number = parseInt(prompt("Input number for check"));
-        var mod = (number % 2);
-        switch (mod){
-            case 0: {
-                document.write(number + " la so chan");
-                break;
-            }
-            case 1: {
-                document.write(number + " la so le");
-                break;
-            }
-            default: {
-                document.write("Ky tu ban nhap khong phai so");
+        var a_list = document.getElementsByClassName("show");
+        for (var index=0; index < a_list.length; index++){
+            a_list[index].onclick = function(){
+                alert('abc');
+                // return false để khỏi reload trang
+                return false;
             }
         }
     </script>
