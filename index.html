@@ -5,22 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-</head>
-<body>
-    <ul>
-        <li><a href="#" class="show">Tin công nghệ</a></li>
-        <li><a href="#">Tin trong nước</a></li>
-        <li><a href="#" class="show">Tin thời sự</a></li>
-    </ul>  
     <script>
-        var a_list = document.getElementsByClassName("show");
-        for (var index=0; index < a_list.length; index++){
-            a_list[index].onclick = function(){
-                alert('abc');
-                // return false để khỏi reload trang
-                return false;
-            }
+        //Hàm khởi tạo đồng hồ
+        function startTime(){
+            //Lấy Object ngày hiện tại
+            var today = new Date();
+            //Giờ, phút, giây hiện tại
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            // Chuyển đổi sang dạng 01, 02 ,03
+            m = checkTime(m);
+            s = checkTime(s);
+            //Ghi ra trình duyệt 
+            document.getElementById('timer').innerHTML= h + ":" + m + ":" + s;
+            //Dùng hàm setTimeoout để thiết lập gọi lại 0.5 giây / lần
+            var t = setTimeout(() => {
+                startTime();
+            }, 500);
         }
-    </script>
+
+        function checkTime(i){
+            if (i < 10){
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>   
+</head>
+<body onload="startTime()">
+    <div id="timer"></div>
 </body>
 </html>
