@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Tạo hàm User như một class
+        function User(){
+            //Thuộc tính
+            this.username = '';
+            this.password = '';
+            //Phương thức
+            this.setInfo = function(u, p){
+                this.username = u;
+                this.password = p;
+            };
+            this.checkLogin = function(){
+                return (this.username === 'admin' && this.password==='@123');
+            };
+            //Phải return this thì mới tạo mới được đối tượng
+            return this;
+        }
+        //Cách sử dụng
+        var user = new User();
+        user.setInfo('admin1','@123');
+        if (user.checkLogin()){
+            alert ('Dang nhap thanh cong');
+        }
+        else {
+            alert ("Dang nhap that bai");
+        }
+    </script>
+</body>
+</html>
