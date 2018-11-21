@@ -8,22 +8,24 @@
 </head>
 <body>
     <script>
-        var Comment = {
-            title: "",
-            content: "",
-            fullname: "",
-            email: "",
-            addComment: function(){
-                this.title = "abc";
-            },
-            validateComment: function(){
+       var Student = {
+           data : [],
+           viewStudent : function(){
+               var listStudent = this.data;
+               for (var index = 0; index < listStudent; index++){
+                   document.write("<div>" + listStudent[i].id + listStudent[i].name + listStudent[i].email + "</div>");
+               }
+           },
+           addStudent : function(id, name, email){
+                
+           },
+           removeStudent : function(id){
 
-            }
-        };
-        var Comments = [];
-        Comments[0] = Comment;
-        Comments[0].title = 'ABC'
-        alert(Comments[0].title);
+           },
+           editStudent : function(id, name, email){
+
+           }
+       }
     </script>
 </body>
 </html>
