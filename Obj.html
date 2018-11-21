@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Comment = {
+            title: "",
+            content: "",
+            fullname: "",
+            email: "",
+            addComment: function(){
+                this.title = "abc";
+            },
+            validateComment: function(){
+
+            }
+        };
+        var Comments = [];
+        Comments[0] = Comment;
+        Comments[0].title = 'ABC'
+        alert(Comments[0].title);
+    </script>
+</body>
+</html>
